@@ -1,0 +1,6 @@
+<div class="navMenu" ng-class="{'open': !!isOpen}">
+	<div class="navMenuItem" ng-repeat="item in menuItems" ng-click="_onClick(item)">
+		<span class="navMenuIcon" ng-class="item.iconClass"></span>
+		<div class="navMenuLabel"> {{item.label}}</div>
+	</div>
+</div>

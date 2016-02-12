@@ -1,0 +1,14 @@
+<div class="login" ng-controller="LoginCtrl as login">
+	<form ng-hide="login.loading">
+	  <div class="form-group">
+	    <input ng-model="login.credentials.username" type="text" class="form-control" id="username" placeholder="Username">
+	  </div>
+	  <div class="form-group">
+	    <input ng-model="login.credentials.password" type="password" class="form-control" id="password" placeholder="Password">
+	  </div>
+	  <button ng-click="login.onSubmit()" class="btn btn-default">Login</button>
+	</form>
+	<div class="loading" ng-show="login.loading">
+		<span class="spinning glyphicon glyphicon-refresh"></span>
+	</div>
+</div>

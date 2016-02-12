@@ -1,0 +1,58 @@
+$nav-menu-width: 250px;
+$nav-menu-width-big: 350px;
+@mixin slide-in-from-left($distance, $duration) {
+	&.open {
+		transform: translateX($distance);
+		-webkit-transform: translateX($distance);
+		-webkit-transition-duration: $duration; 
+		transition-duration: $duration;
+	}
+	transform: translateX(-$distance);
+	-webkit-transform: translateX(-$distance);
+	-webkit-transition-duration: $duration; 
+	transition-duration: $duration;
+}
+.navMenu {
+	position: absolute;
+    bottom: 0;
+    left: -$nav-menu-width;
+    top: $header-height;
+    z-index: $base-z-index+2;
+    $slide-duration: .25s;
+    width: $nav-menu-width;
+   	background-color: lightgray;
+	opacity: .9;
+    @include slide-in-from-left($nav-menu-width, $slide-duration);
+    @media (min-width: 768px) {
+        width: $nav-menu-width-big;
+        left: -$nav-menu-width-big;
+        @include slide-in-from-left($nav-menu-width-big, $slide-duration);
+    }
+	.navMenuItem {
+		display: flex;
+		border-bottom: 1px solid gray;
+		padding: 5px 2px;
+		text-decoration: initial;
+		cursor: pointer;
+		height: 40px;
+		.navMenuLabel {
+			padding: 5px;
+			font-size: 20px;
+			position: absolute;
+    		left: 35px;
+		}
+		.navMenuIcon {
+		    font-size: 20px;
+    		padding-top: 4px;
+		}
+	}
+	.navMenuItem:hover {
+		background-color: darkgray;
+	}
+}
+.hamburger {
+	font-size: 24px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
