@@ -32,6 +32,42 @@
           }
         }
       }
+    },
+    "/waspackage": {
+      "x-handler": "wasPackage",
+      "get": {
+        "summary": "Gets all was packages in the database",
+        "description": "Gets all was packages in the database",
+        "operationId": "query",
+        "parameters": [
+          {
+            "name": "install_id",
+            "in": "query",
+            "description": "Install id",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "host",
+            "in": "query",
+            "description": "Host",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "location",
+            "in": "query",
+            "description": "Location",
+            "type": "string",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Result set"
+          }
+        }
+      }
     }
   }
 }

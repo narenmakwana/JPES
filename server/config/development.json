@@ -1,0 +1,16 @@
+{
+  //mongodb://<dbuser>:<dbpassword>@ds011218.mongolab.com:11218/ps_sample
+  "mongodb" : {
+    "connection" : {
+      "uri" : "mongodb://mongops:m0ng0ps@ds011218.mongolab.com:11218/ps_sample"
+    },
+    "collections" : {
+      "was-package" : "was-package",
+      "was-server" : "was-server",
+      "was-cluster" : "was-cluster",
+      "was-server-index" : "was-server-index",
+      "was-response" : "was-response",
+      "was-inventory" : "was-inventory"
+    }
+  }
+}
