@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "package",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string"
+    },
+    "rollback": {
+      "type": "array",
+      "items" : {
+        "$ref": "rollback.json"
+      }
+    },
+    "feature": {
+      "type": "array",
+      "items" : {
+        "$ref": "feature.json"
+      }
+    },
+    "version": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "date",
+    "rollback",
+    "feature",
+    "version",
+    "name",
+    "id"
+  ],
+  "additionalProperties": false
+}

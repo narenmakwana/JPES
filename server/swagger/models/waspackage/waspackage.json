@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "waspackage",
+  "type": "object",
+  "properties": {
+    "install_id": {
+      "type": "string"
+    },
+    "packages": {
+      "type": "array",
+      "items" : {
+        "$ref": "package.json"
+      }
+    },
+    "host": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "install_id",
+    "packages",
+    "host",
+    "location"
+  ],
+  "additionalProperties": false
+}

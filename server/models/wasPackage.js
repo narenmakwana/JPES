@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
 var WasPackageSchema = new BaseSchema({
     host : String,
     install_id : String,
-    location : Date,
+    location : String,
     packages : [mongoose.Schema.Types.Mixed]
 });
 

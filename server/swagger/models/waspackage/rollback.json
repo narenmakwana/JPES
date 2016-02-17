@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "rollback",
+  "type": "object",
+  "properties": {
+    "packageid": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "packageid"
+  ],
+  "additionalProperties": false
+}

@@ -67,6 +67,80 @@
             "description": "Result set"
           }
         }
+      },
+      "post": {
+        "summary": "Creates a new WAS package record",
+        "description": "Creates a new WAS package record",
+        "operationId": "create",
+        "parameters": [
+          {
+            "name": "waspackage",
+            "in": "body",
+            "description": "New WAS package",
+            "required": true,
+            "schema": {
+              "$ref": "./models/waspackage/waspackage.json"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/waspackage/{id}": {
+      "x-handler": "wasPackage",
+      "get": {
+        "summary": "Gets all was packages in the database",
+        "description": "Gets all was packages in the database",
+        "operationId": "get",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "record id",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Record"
+          },
+          "404" : {
+            "description" : "Not found"
+          }
+        }
+      },
+      "put": {
+        "summary": "Gets all was packages in the database",
+        "description": "Gets all was packages in the database",
+        "operationId": "update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "record id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "waspackage",
+            "in": "body",
+            "description": "Existing WAS package",
+            "required": true,
+            "schema": {
+              "$ref": "./models/waspackage/waspackage.json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Record"
+          }
+        }
       }
     }
   }

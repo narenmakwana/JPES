@@ -2,7 +2,8 @@
 	"express": {
 		"port": "3003",
 		"middleware": [
-			"bodyParser"
+			"bodyParser",
+			"url"
 		],
 		"middleware$": ["error"]
 	},
