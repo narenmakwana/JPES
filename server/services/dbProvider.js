@@ -1,5 +1,8 @@
 var mongoose = require('mongoose');
 
+
+
+
 function init(config, callback){
     var mConfig = config.get('mongodb');
     var uri = mConfig.connection && mConfig.connection.uri || null;

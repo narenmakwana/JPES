@@ -1,14 +1,13 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-var WasPackageSchema = new Schema({
+var mongoose = require('mongoose'),
+    BaseSchema = require('./baseSchema');
+
+var WasPackageSchema = new BaseSchema({
     host : String,
     install_id : String,
     location : Date,
-    packages : [Schema.Types.Mixed]
-} , {
-    collection : 'waspackage'
+    packages : [mongoose.Schema.Types.Mixed]
 });
 
-var WasPackage = mongoose.model('waspackage', WasPackageSchema);
+var WasPackage = mongoose.model('WasPackage', WasPackageSchema , 'waspackage');
 
 module.exports = WasPackage;

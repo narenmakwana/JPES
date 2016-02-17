@@ -7,9 +7,7 @@ function init(logger, callback){
 
 function query(queryObj, next){
     queryObj = queryObj || {};
-    WasPackageModel.find(queryObj, function (err, docs) {
-        next(err, docs);
-    });
+    WasPackageModel.paginate(queryObj,next);
 };
 
 module.exports = {

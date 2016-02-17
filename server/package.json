@@ -17,7 +17,9 @@
     "test": "mocha --check-leaks --globals services,__appDir test/unit; npm run lint"
   },
   "dependencies": {
+    "async": "^1.5.2",
     "blueoak-server": "^2.0.0",
+    "lodash": "^4.4.0",
     "mongodb": "^2.1.7",
     "mongoose": "^4.4.3",
     "request": "^2.51.0"
