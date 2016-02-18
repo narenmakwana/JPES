@@ -35,7 +35,7 @@
           }
         });
 
-        scope._onSubmit = function(valid){
+        scope._onSubmit = function(){
           var func = scope.onSubmit();
           if(angular.isFunction(func)){
             func(scope.formConfig.type, scope.formData);

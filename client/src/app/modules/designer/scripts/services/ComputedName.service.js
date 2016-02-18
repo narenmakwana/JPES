@@ -28,29 +28,31 @@
 		
 		return {
 			getComputedName: function(type, data){
-				var result = '';
-	            if(type === 'cellName'){
-	              result = getCellName()
-	            }
-	            else if(type === 'dmgrName'){
-	              result = getDmgrName();
-	            }
-	            else if(type === 'clusterName'){
-	              result = getClusterName();
-	            }
-	            else if(type === 'nodeName'){
-	              result = getNodeName();
-	            }
-	            else if(type === 'memberName'){
-	              result = getMemberName();
-	            }
-	            else if(type === 'profileName'){
-	              result = getProfileName();
-	            }
-	            else if(type === 'ihsProfile'){
-	              result = getIHSProfile();
-	            }
-	            return '';
+				//TODO Hook these up to the right inputs
+				var result = 'TODO-Computed-Names';
+				type = null;
+				if(type === 'cellName'){
+					result = getCellName(data)
+				}
+				else if(type === 'dmgrName'){
+					result = getDmgrName(data);
+				}
+				else if(type === 'clusterName'){
+					result = getClusterName(data);
+				}
+				else if(type === 'nodeName'){
+					result = getNodeName(data);
+				}
+				else if(type === 'memberName'){
+					result = getMemberName(data);
+				}
+				else if(type === 'profileName'){
+					result = getProfileName(data);
+				}
+				else if(type === 'ihsProfile'){
+					result = getIHSProfile(data);
+				}
+				return result;
 			}
 		}
 	}
