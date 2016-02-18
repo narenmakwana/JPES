@@ -1,10 +1,10 @@
 # Allstate-JPES
-
 ### Prerequisites
 Node.js, NPM, Bower
 
+##Client
 
-### Client Install
+### Install
 
 ```
 cd client
@@ -12,7 +12,7 @@ cd client
 bower install
 ```
 
-### Start client development server
+### Start development server
 
 For the client:
 ```
@@ -20,7 +20,7 @@ cd client
 gulp serve
 ```
 
-### Working with production client code
+### Working with production code
 Build:
 ```
 cd client
@@ -32,3 +32,17 @@ Run:
 cd client
 gulp serve:dist
 ```
+##Server
+
+###Install
+```
+cd server
+[sudo] npm install
+```
+
+### Start development server
+```
+cd server
+npm start
+```
+Server listens at http://localhost:3003/
