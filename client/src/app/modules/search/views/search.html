@@ -1,3 +1,19 @@
-<div id="search-view">
-Search Goes Here!
+<div ng-controller="SearchCtrl as search" id="search-view">
+	Search goes here!
+	<div class="search-form">
+		<!-- <button ng-click="search.onSearch()" class="btn btn-default search-button">Search</button> -->
+	</div>
+	<div class="search-content">
+		<div class="loading" ng-show="search.progress.show">
+			<span class="spinning glyphicon glyphicon-refresh"></span>
+		</div>
+		<div ng-show="!search.progress.show">
+			<div class="results" ng-if="!search.error.show">
+				<result-table data="search.results" on-row-click="search.onCellClick"></result-table>
+			</div>
+			<div class="error"  ng-if="search.error.show">
+				{{search.error.msg}}
+			</div>
+		</div>
+	</div>
 </div>

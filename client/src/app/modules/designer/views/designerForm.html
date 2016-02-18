@@ -1,0 +1,141 @@
+<div class="designer-form">
+	<form name="designerForm" novalidate ng-submit="_onSubmit(designerForm.$valid)">
+	  <div ng-if="formConfig.tciCode" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="tciCode">TCI Code</label>
+	    <input required name="tciCode" ng-model="formData.tciCode" type="text" class="form-control" id="tciCode" placeholder="">
+	  </div>
+	  <div ng-if="formConfig.hostName" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="hostName">Host Name</label>
+	    <select required name="hostName" ng-model="formData.hostName" id="hostName" class="form-control">
+	    	<option></option>
+	    	<option ng-repeat="value in ::OptionsService.getHostNames()">{{::value}}</option>
+	   	</select>
+	  </div>
+	  <div ng-if="formConfig.envType" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="envType">Environment Type</label>
+	    <select required name="envType" ng-model="formData.envType" id="envType" class="form-control">
+	    	<option></option>
+	    	<option ng-repeat="value in ::OptionsService.getEnvTypes()">{{::value}}</option>
+	   	</select>
+	  </div>
+	  <div ng-if="formConfig.installType" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="installType">Install Type</label>
+	    <select required name="installType" ng-model="formData.installType" id="installType" class="form-control">
+	    	<option></option>
+	    	<option ng-repeat="value in ::OptionsService.getInstallTypes(formConfig.type)">{{::value}}</option>
+	   	</select>
+	  </div>
+	  <div ng-if="formConfig.envNumber" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="envNumber">Environment Number</label>
+	    <input required name="envNumber" ng-model="formData.envNumber" type="text" class="form-control" id="envType" placeholder="">
+	  </div>
+	  <div ng-if="formConfig.clusterNumber" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="clusterNumber">Cluster Number</label>
+	    <input required name="clusterNumber" ng-model="formData.clusterNumber" type="text" class="form-control" id="clusterNumber" placeholder="">
+	  </div>
+	  <div ng-if="formConfig.nodeNumber" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="nodeNumber">Node Number</label>
+	    <input required name="nodeNumber" ng-model="formData.nodeNumber" type="text" class="form-control" id="nodeNumber" placeholder="">
+	  </div>
+	  <div ng-if="formConfig.initHeapSize" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="initHeapSize">Initial Heap Size</label>
+	    <input required name="initHeapSize" ng-model="formData.initHeapSize" type="text" class="form-control" id="initHeapSize" placeholder="">
+	  </div>
+	  <div ng-if="formConfig.maxHeapSize" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="maxHeapSize">Max Heap Size</label>
+	    <input required name="maxHeapSize" ng-model="formData.maxHeapSize" type="text" class="form-control" id="maxHeapSize" placeholder="">
+	  </div>
+	  <div ng-if="formConfig.memberNumber" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="memberNumber">Member Number</label>
+	    <input required name="memberNumber" ng-model="formData.memberNumber" type="text" class="form-control" id="memberNumber" placeholder="">
+	  </div>
+	  <div ng-if="formConfig.portBlock" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="portBlock">Port Block</label>
+	    <input min="0" max="65535" required name="portBlock" ng-model="formData.portBlock" type="number" class="form-control" id="portBlock" placeholder="">
+	  </div>
+	  <div ng-if="formConfig.appName" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="appName">App Name</label>
+	    <input required name="appName" ng-model="formData.appName" type="text" class="form-control" id="appName" placeholder="">
+	  </div>
+	  <div ng-if="formConfig.runAsUser" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="runAsUser">Run As User</label>
+	    <select required name="runAsUser" ng-model="formData.runAsUser" id="runAsUser" class="form-control">
+	    	<option></option>
+	    	<option ng-repeat="value in ::OptionsService.getRunAsUsers()">{{::value}}</option>
+	   	</select>
+	  </div>
+	  <div ng-if="formConfig.ihsNumber" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="ihsNumber">IHS Number</label>
+	    <input required name="ihsNumber" ng-model="formData.ihsNumber" type="text" class="form-control" id="ihsNumber" placeholder="">
+	  </div>
+	  <div ng-if="formConfig.ihsPort" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="ihsPort">IHS Port</label>
+	    <input min="0" max="65535" required name="ihsPort" ng-model="formData.ihsPort" type="number" class="form-control" id="ihsPort" placeholder="">
+	  </div>
+	  <div ng-if="formConfig.domain" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="domain">Domain</label>
+	    <select required name="domain" ng-model="formData.domain" id="domain" class="form-control">
+	    	<option ng-repeat="value in ::OptionsService.getDomains()">{{::value}}</option>
+	   	</select>
+	  </div>
+	  <div ng-if="formConfig.version" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="version">Version</label>
+	    <select required name="version" ng-model="formData.version" id="version" class="form-control">
+	    	<option ng-repeat="value in ::OptionsService.getVersions()">{{::value}}</option>
+	   	</select>
+	  </div>
+	  <div ng-if="formConfig.suffix" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="suffix">Suffix</label>
+	    <input required name="suffix" ng-model="formData.suffix" type="number" class="form-control" id="suffix" placeholder="">
+	  </div>
+	  <div ng-if="formConfig.wasiFix" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="iFix">WAS iFix</label>
+	    <select required name="wasiFix" ng-model="formData.wasiFix" id="wasiFix" class="form-control">
+	    	<option ng-repeat="value in ::OptionsService.getiFixes()">{{::value}}</option>
+	   	</select>
+	  </div>
+	  <div ng-if="formConfig.wpsiFix" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="wpsiFix">WPS iFix</label>
+	    <select required name="wpsiFix" ng-model="formData.wpsiFix" id="wpsiFix" class="form-control">
+	    	<option ng-repeat="value in ::OptionsService.getiFixes()">{{::value}}</option>
+	   	</select>
+	  </div>
+	  <div ng-if="formConfig.monitoringPolicy" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="monitoringPolicy">Monitoring Policy</label>
+	    <select required name="monitoringPolicy" ng-model="formData.monitoringPolicy" id="monitoringPolicy" class="form-control">
+	    	<option ng-repeat="value in ::OptionsService.getMonitoringPolicies()">{{::value}}</option>
+	   	</select>
+	  </div>
+	  <div ng-if="formConfig.portal">
+ 		<div class="form-group col-xs-12 col-sm-6 col-md-4">
+	    	<label for="portalId">Portal ID</label>
+	    	<input required name="portalId" ng-model="formData.portalId" type="text" class="form-control" id="portalId" placeholder="">
+	  	</div>
+	  	<div class="form-group col-xs-12 col-sm-6 col-md-4">
+	    	<label for="portalGroup">Portal Group</label>
+	    	<input required name="portalGroup" ng-model="formData.portalGroup" type="text" class="form-control" id="portalGroup" placeholder="">
+	  	</div>
+	  	<div class="form-group col-xs-12 col-sm-6 col-md-4">
+	    	<label for="portalVersion">Portal Version</label>
+	    	<select required name="portalVersion" ng-model="formData.portalVersion" id="portalVersion" class="form-control">
+	    		<option ng-repeat="value in ::OptionsService.getPortalVersions()">{{::value}}</option>
+	   		</select>
+	  	</div>
+	  </div>
+	  <div ng-if="formConfig.dbAlias" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="dbAlias">DB OPOD Server Alias</label>
+	    <input required name="dbAlias" ng-model="formData.dbAlias" type="text" class="form-control" id="dbAlias" placeholder="">
+	  </div>
+	  <div ng-if="formConfig.dbSchema" class="form-group col-xs-12 col-sm-6 col-md-4">
+	    <label for="dbSchema">DB Schema Prefix</label>
+	    <input required name="dbSchema" ng-model="formData.dbSchema" type="text" class="form-control" id="dbSchema" placeholder="">
+	  </div>
+	  	<div class="col-xs-12"></div>
+		<div class="button-container col-xs-12 col-sm-6">
+			<button type="button" class="btn btn-default" ng-click="_onCancel()">Cancel</button>
+		</div>
+		<div class="button-container col-xs-12 col-sm-6">
+			<button type="submit" ng-disabled="!designerForm.$valid" class="btn btn-success">Create</button>
+		</div>
+	</form>
+</div>

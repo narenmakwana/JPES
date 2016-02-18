@@ -13,7 +13,7 @@ $nav-menu-width-big: 350px;
 	transition-duration: $duration;
 }
 .navMenu {
-	position: absolute;
+	position: fixed;
     bottom: 0;
     left: -$nav-menu-width;
     top: $header-height;
@@ -21,7 +21,7 @@ $nav-menu-width-big: 350px;
     $slide-duration: .25s;
     width: $nav-menu-width;
    	background-color: lightgray;
-	opacity: .9;
+	opacity: .95;
     @include slide-in-from-left($nav-menu-width, $slide-duration);
     @media (min-width: 768px) {
         width: $nav-menu-width-big;
@@ -36,7 +36,7 @@ $nav-menu-width-big: 350px;
 		cursor: pointer;
 		height: 40px;
 		.navMenuLabel {
-			padding: 5px;
+			padding: 3px 5px;
 			font-size: 20px;
 			position: absolute;
     		left: 35px;

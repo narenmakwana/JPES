@@ -8,7 +8,7 @@
 			isAuthorized: false
 		};
 		var isAuthorized = function(){
-			return _authStatus.isAuthorized
+			return _authStatus.isAuthorized;
 		};
 		var _setAuthorized = function(isAuthorized){
 			_authStatus.isAuthorized = !!isAuthorized;

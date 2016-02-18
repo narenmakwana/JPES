@@ -1,0 +1,40 @@
+#designer-view{
+	padding: 10px;
+	.designer-form {
+		label{ 
+			float:left;
+		}
+		.ng-invalid.ng-touched {
+			border-color: red;
+    		border-width: 2px;
+    		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+		}
+	}
+	.button-container {
+		text-align: center;
+		button{
+			margin-top: 10px;
+			min-width: 80%;
+		}
+		&:last-of-type{
+			margin-bottom: 20px;
+		}
+	}
+	.designer-config{
+		.designer-submit {
+			text-align: center;
+			button{
+				width: 250px;
+			}
+		}
+		.glyphicon-remove {
+			color: red;
+		}
+		.glyphicon-ok {
+			color: green;
+		}
+		.glyphicon-share-alt {
+			color: blue;
+		}
+	}
+}

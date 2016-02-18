@@ -1,0 +1,23 @@
+#search-view{
+	.search-form{
+		text-align: center;
+		.search-button{
+			width: 100px;
+		}
+	}
+  
+	.search-content{
+		.loading {
+			text-align: center;
+			font-size: 32px;
+			padding-top: 100px;
+		}
+		.results {
+			padding: 10px;
+		}
+		.error {
+			text-align: center;
+			padding-top: 50px;
+		}
+	} 
+}

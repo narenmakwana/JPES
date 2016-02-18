@@ -41,9 +41,10 @@ $header-height: 50px;
 
 .content {
 	margin-top: $header-height;
+  padding-top: 10px;
 }
 
-#home-view, #designer-view, #search-view, #reports-view {
+#home-view, #search-view, #reports-view {
   padding-top: 200px;
   text-align: center;
 }

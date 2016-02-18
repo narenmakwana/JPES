@@ -1,3 +1,46 @@
-<div id="designer-view">
-Designer Goes Here!
+<div ng-controller="DesignerCtrl as designer" id="designer-view">
+	<div class="designer-config" ng-show="!designer.view.showForm">
+		<div class="designer-create">
+			<ol>
+				<li>
+					<div class="cell">Configure Cell
+						<span class="designer-icon glyphicon" ng-class="{'glyphicon-ok': designer.config.cell, 'glyphicon-remove': !designer.config.cell}"></span>
+						<span ng-click="designer.gotoForm('cell')" class="clickable glyphicon glyphicon-share-alt">
+					</div>
+				</li>
+				<li>
+					<div class="dmgr">Add A Deployment Manager
+						<span class="designer-icon glyphicon" ng-class="{'glyphicon-ok': designer.config.dmgr.length, 'glyphicon-remove': !designer.config.dmgr.length}"></span>
+						<span ng-click="designer.gotoForm('dmgr')" class="clickable glyphicon glyphicon-share-alt">
+					</div>
+				<li>
+					<div class="node">Add Nodes
+						<span class="designer-icon glyphicon" ng-class="{'glyphicon-ok': designer.config.node.length, 'glyphicon-remove': !designer.config.node.length}"></span>
+						<span ng-click="designer.gotoForm('node')" class="clickable glyphicon glyphicon-share-alt">
+					</div>
+				</li>
+				<li>
+					<div class="clusterMember">Add Cluster Members
+						<span class="designer-icon glyphicon" ng-class="{'glyphicon-ok': designer.config.clusterMember.length, 'glyphicon-remove': !designer.config.clusterMember.length}"></span>
+						<span ng-click="designer.gotoForm('clusterMember')" class="clickable glyphicon glyphicon-share-alt">
+					</div>
+				</li>
+				<li>
+					<div class="ihs">Add An IHS
+						<span class="designer-icon glyphicon" ng-class="{'glyphicon-ok': designer.config.ihs.length, 'glyphicon-remove': !designer.config.ihs.length}"></span>
+						<span ng-click="designer.gotoForm('ihs')" class="clickable glyphicon glyphicon-share-alt">
+					</div>
+				</li>
+			</ol>
+		</div>
+		<div class="designer-results">
+			<designer-results designer-data="designer.config"></designer-results>
+		</div>
+		<div class="designer-submit">
+			<button type="button" class="btn btn-success" ng-disabled="!isCellValid()" ng-click="">Create Cell</button>
+		</div>
+	</div>
+	<div ng-show="designer.view.showForm">
+		<designer-form on-cancel="designer.cancelForm" on-submit="designer.submitForm" form-config="designer.form.config" form-data="designer.form.data"></designer-form>
+	</div>
 </div>
